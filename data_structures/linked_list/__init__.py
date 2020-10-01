@@ -1,20 +1,20 @@
-class Node:
-    def __init__(self, item, next):
-        self.item = item
-        self.next = next
+class Node:        #Class to creat node
+    def __init__(self, item, next):   #structure
+        self.item = item              #node item(data) part
+        self.next = next              #node next(adress) part 
 
 
 class LinkedList:
-    def __init__(self):
+    def __init__(self):               #creating head of linked list
         self.head = None
         self.size = 0
 
-    def add(self, item):
-        self.head = Node(item, self.head)
+    def add(self, item):             #creating 1st node
+        self.head = Node(item, self.head)       #storing address of 1st node in head
         self.size += 1
 
-    def remove(self):
-        if self.is_empty():
+    def remove(self):                #function to remove  node
+        if self.is_empty():          # if there is no any node then it will return None
             return None
         else:
             item = self.head.item
@@ -22,7 +22,7 @@ class LinkedList:
             self.size -= 1
             return item
 
-    def is_empty(self):
+    def is_empty(self):              #This function use to check Linked list is empty or not
         return self.head is None
 
     def __len__(self):
